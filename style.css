@@ -1,0 +1,131 @@
+/* RESET */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Poppins', sans-serif; background:#f4f6f8; color:#333; }
+
+/* NAVIGATION */
+nav {
+  background:#111;
+  padding:15px;
+  text-align:center;
+}
+nav a {
+  color:white; margin:0 15px; text-decoration:none; font-weight:bold; position:relative;
+}
+nav a::after {
+  content:""; width:0; height:2px; background:#1e90ff; position:absolute; left:0; bottom:-5px; transition:0.3s;
+}
+nav a:hover::after { width:100%; }
+nav a:hover { color:#1e90ff; }
+
+/* HEADER */
+header {
+  height:80vh;
+  background: linear-gradient(120deg,#1e90ff,#00bfff);
+  display:flex; justify-content:center; align-items:center;
+  text-align:center; color:white;
+  animation:fade 1.5s ease;
+}
+header h1 { font-size:3em; }
+header p { margin-top:10px; font-size:1.2em; }
+
+/* BOUTON ACCUEIL */
+header .btn {
+  display:inline-block; padding:10px 25px; margin-top:20px; border:2px solid #fff;
+  color:#fff; border-radius:25px; text-decoration:none; transition:0.3s;
+}
+header .btn:hover { background:#1e90ff; border-color:#1e90ff; }
+
+/* SECTIONS */
+section {
+  padding:60px 10%; 
+  animation:slide 1s ease;
+}
+h2 { color:#1e90ff; margin-bottom:20px; }
+
+/* GALERIE PHOTOS */
+.photos {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+}
+.photos img {
+  width:100%; border-radius:12px; cursor:pointer;
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+.photos img:hover { transform:scale(1.05); box-shadow:0 10px 25px rgba(0,0,0,0.2); }
+
+/* BARRES DE COMPÉTENCES */
+.skill-bar {
+  background:#ddd; border-radius:20px; overflow:hidden; margin-bottom:15px; height:20px;
+}
+.skill-progress {
+  height:100%; background:#1e90ff; width:0;
+  animation:fillBar 2s forwards;
+}
+.skill-progress.programmation { width:80%; }
+.skill-progress.informatique { width:90%; }
+.skill-progress.cybersecu { width:60%; }
+
+/* FOOTER */
+footer {
+  background:#111; color:white; text-align:center; padding:20px;
+}
+footer .social a { color:white; margin:0 10px; text-decoration:none; transition:0.3s; }
+footer .social a:hover { color:#1e90ff; }
+
+/* ANIMATIONS */
+@keyframes fade { from{opacity:0;} to{opacity:1;} }
+@keyframes slide { from{opacity:0; transform:translateY(40px);} to{opacity:1; transform:translateY(0);} }
+@keyframes fillBar { from{width:0;} to{width:100%;} }
+/* FORMULAIRE CONTACT */
+.contact-form {
+  display:flex;
+  flex-direction:column;
+  max-width:500px;
+  margin:20px auto 0;
+}
+
+.contact-form label {
+  margin-top:15px;
+  margin-bottom:5px;
+  font-weight:bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  font-size:1em;
+  width:100%;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color:#1e90ff;
+  box-shadow:0 0 5px rgba(30,144,255,0.5);
+  outline:none;
+}
+
+.contact-form textarea {
+  resize:vertical;
+  min-height:120px;
+}
+
+.contact-form button {
+  margin-top:20px;
+  padding:12px;
+  border:none;
+  border-radius:25px;
+  background:#1e90ff;
+  color:white;
+  font-size:1em;
+  cursor:pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.contact-form button:hover {
+  background:#00bfff;
+  transform:translateY(-2px);
+}
